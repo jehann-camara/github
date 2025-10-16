@@ -1,0 +1,6 @@
+RELATORIO DO PROJETO ETL
+==============================
+Total de Vendas: 5
+Valor Total: R$ 8,210.00
+Produto Mais Vendido: Notebook
+Cidade com Maior Venda: São Paulo

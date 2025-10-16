@@ -1,0 +1,32 @@
+[
+  {
+    "cliente_id":101,
+    "nome":"Ana Silva",
+    "cidade":"S\u00e3o Paulo",
+    "estado":"SP"
+  },
+  {
+    "cliente_id":102,
+    "nome":"Carlos Santos",
+    "cidade":"Rio de Janeiro",
+    "estado":"RJ"
+  },
+  {
+    "cliente_id":103,
+    "nome":"Marina Oliveira",
+    "cidade":"Belo Horizonte",
+    "estado":"MG"
+  },
+  {
+    "cliente_id":104,
+    "nome":"Pedro Costa",
+    "cidade":"Porto Alegre",
+    "estado":"RS"
+  },
+  {
+    "cliente_id":105,
+    "nome":"Julia Lima",
+    "cidade":"Recife",
+    "estado":"PE"
+  }
+]

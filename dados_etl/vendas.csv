@@ -1,0 +1,6 @@
+venda_id,produto,quantidade,valor_unitario,data_venda
+1,Notebook,2,2500.0,2025-01-15
+2,Mouse,5,50.0,2025-01-16
+3,Teclado,3,120.0,2025-01-17
+4,Monitor,1,800.0,2025-01-18
+5,Tablet,4,450.0,2025-01-19

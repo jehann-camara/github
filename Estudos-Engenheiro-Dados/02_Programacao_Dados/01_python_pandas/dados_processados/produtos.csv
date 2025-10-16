@@ -1,0 +1,6 @@
+id,produto,preco,categoria
+101,Notebook Dell,3500.0,Eletronicos
+102,Mouse Logitech,89.9,Perifericos
+103,Teclado Mecanico,250.0,Perifericos
+104,"Monitor 24""",1200.0,Eletronicos
+105,Headphone Sony,450.0,Audio
