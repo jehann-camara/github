@@ -121,7 +121,7 @@ Pense no Git como um **"salvamento inteligente"** do seu projeto. Cada "save" gu
 
 # Comandos de configuração do Git.
     git config --global user.name "Jehann Câmara" 
-    git config --global user.email 	meuEmail@outlook.com
+    git config --global user.email j.camara.it@outlook.com
     git config --global init.default branch main **Ou branch master**
 
 # Configurar editor padrão (VS Code)
@@ -187,7 +187,7 @@ Pense no Git como um **"salvamento inteligente"** do seu projeto. Cada "save" gu
 # Alias ( atalhos, apelidos) em git, local ou global, ex:
     git config alias.coma "commit -a"
     git config --global alias.sts status
-    git config --global alias.com "commit -a"
+    git config --global alias.com "commit"
     git config --global alias.coma "commit -a"
     git config --global alias.log1 "log --oneline"
     
