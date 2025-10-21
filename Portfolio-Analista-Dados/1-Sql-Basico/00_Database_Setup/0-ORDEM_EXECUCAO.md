@@ -17,3 +17,4 @@ Execute os scripts **numericamente na seguinte ordem**:
 
 ## Na ordem exata:
 SOURCE 00_Database_Setup/01_setup_estudos_sql.sql
+SOURCE 00_Database_Setup/01_setup_roadmap_principal.sql
