@@ -1,4 +1,4 @@
-
+## Resumo Sql básico // By Jehann Câmara
 
 ## Resumo Sql Básico
     SELECT * Escolhe e calcula as colunas do resultado *
