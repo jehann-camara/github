@@ -66,6 +66,20 @@ BEGIN
     PRINT '[SUCESSO] Tabela pedidos criada';
 END
 
+-- 7. Cria tabela users
+IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'users')
+BEGIN
+    --CREATE TABLE users (
+    --    id INT PRIMARY KEY IDENTITY(1,1),
+    --    nome varchar(100)        
+    --);
+    CREATE TABLE users (
+        id INT PRIMARY KEY IDENTITY(1,1),
+        nome varchar(100) UNIQUE NOT NULL        
+    );
+    PRINT '[SUCESSO] Tabela users criada';
+END
+
 -- ==========================================
 -- INSERINDO DADOS DE EXEMPLO
 -- ==========================================
@@ -74,6 +88,10 @@ END
 DELETE FROM pedidos;
 DELETE FROM produtos;
 DELETE FROM clientes;
+DELETE FROM users;
+
+-- Limpar os dados com truncate
+TRUNCATE TABLE users
 
 -- Insere clientes
 INSERT INTO clientes (nome, email, idade, cidade, data_cadastro) VALUES
@@ -111,11 +129,30 @@ INSERT INTO pedidos (cliente_id, produto_id, quantidade, valor_total, data_pedid
 (1, 9, 1, 199.90, '2024-02-18');
 PRINT '[SUCESSO] Dados de pedidos inseridos';
 
+-- Alter table COM NOT NULL
+ALTER TABLE users add email varchar (100) NOT NULL;
+
+-- Alterar tabela com Unique para email
+ALTER TABLE users ADD CONSTRAINT unique_tb_users UNIQUE (email)
+
+-- A constraint unique_tb_users não permite email duplicado
+INSERT INTO users (nome, email) VALUES
+('Jehann', 'exemploemail@gmail.com'),
+('João', 'exemploemail@hotmail.com'),
+('Maria', 'exemploemail@kmail.com'),
+('José', 'exemploemail@yahoo.com'),
+('Joãozinho', 'exemploemail@outlook.com');
+PRINT '[SUCESSO] Dados de users inseridos';
+
 -- Verificacao final
 PRINT '=== VERIFICACAO FINAL ===';
 SELECT 
     (SELECT COUNT(*) FROM clientes) AS total_clientes,
     (SELECT COUNT(*) FROM produtos) AS total_produtos,
-    (SELECT COUNT(*) FROM pedidos) AS total_pedidos;
+    (SELECT COUNT(*) FROM pedidos) AS total_pedidos,
+     (SELECT COUNT(*) FROM users) AS total_users;
+     (SELECT * FROM users)
+
+     --EXEC sp_help users -- ou atalho alt + f1 clicando no nome da tabela 
 
 PRINT '[FIM] Script executado com sucesso!';
