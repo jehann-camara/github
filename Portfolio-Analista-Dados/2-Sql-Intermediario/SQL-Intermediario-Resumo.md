@@ -270,6 +270,78 @@
             EXEC RelatorioVendas @DataInicio = '2025-01-01', @DataFim = '2025-03-31';
             EXEC RelatorioVendas @Categoria = 'Eletrônicos';
 
+## Procedures com variáveis internas e lógica condicional
+## Procedures podem armazenar resultados em variáveis, usar IF/ELSE e executar blocos lógicos:
+        CREATE PROCEDURE AvaliarCliente
+            @ID_Cliente INT
+        AS
+        BEGIN
+            SET NOCOUNT ON;
+
+            DECLARE @Total DECIMAL(10,2);
+
+            SELECT @Total = SUM(Valor)
+            FROM Vendas
+            WHERE ID_Cliente = @ID_Cliente;
+
+            IF @Total > 50000
+                PRINT 'Cliente de alto valor';
+            ELSE
+                PRINT 'Cliente regular';
+        END;
+
+## Procedures com saída de valor (Output Parameter):
+## Você pode retornar resultados diretamente em variáveis externas, não apenas via SELECT:
+        CREATE PROCEDURE ContarVendasCliente
+            @ID_Cliente INT,
+            @QtdVendas INT OUTPUT
+        AS
+        BEGIN
+            SET NOCOUNT ON;
+            SELECT @QtdVendas = COUNT(*) FROM Vendas WHERE ID_Cliente = @ID_Cliente;
+        END;
+
+        Execução:
+
+        DECLARE @Resultado INT;
+        EXEC ContarVendasCliente @ID_Cliente = 3, @QtdVendas = @Resultado OUTPUT;
+        SELECT @Resultado AS TotalVendas;
+
+## Atualizando, testando e removendo procedures
+    ALTER PROCEDURE nome : Atualiza uma procedure existente
+    DROP PROCEDURE nome : Exclui uma procedure
+    EXEC nome : Executa
+    sp_helptext 'nome' : Exibe o código da procedure
+
+## Exemplo integrado com CTE e Window Functions
+        CREATE PROCEDURE RankingClientesMensal
+            @Mes INT,
+            @Ano INT
+        AS
+        BEGIN
+            SET NOCOUNT ON;
+
+            WITH VendasMes AS (
+                SELECT 
+                    ID_Cliente,
+                    SUM(Valor) AS Total
+                FROM Vendas
+                WHERE MONTH(DataVenda) = @Mes AND YEAR(DataVenda) = @Ano
+                GROUP BY ID_Cliente
+            )
+            SELECT 
+                c.Nome AS Cliente,
+                v.Total,
+                RANK() OVER (ORDER BY v.Total DESC) AS Posicao
+            FROM VendasMes v
+            JOIN Clientes c ON c.ID_Cliente = v.ID_Cliente;
+        END;
+
+        Execução:
+            EXEC RankingClientesMensal @Mes = 9, @Ano = 2025;
+
+
+
 
 
 
