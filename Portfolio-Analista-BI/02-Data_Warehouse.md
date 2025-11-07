@@ -8,7 +8,11 @@ Este documento apresenta, de forma concisa e prática, os conceitos-chave de um 
 - Data Warehouse: repositório centralizado de dados históricos, organizado para análise e tomada de decisão (OLAP).
 - Objetivo: integrar dados heterogêneos, garantir consistência temporal, otimizar consultas analíticas e suportar relatórios e BI.
 - Diferença principal: OLTP (transações) vs OLAP (análise/histórico).
-- Propriedades: Não Volátil, Integração e Padronização, Orientação ao Tempo, Orientado ao Assunto.
+
+### 1.1
+- Propriedades: Não Volátil, Integração e Padronização, Orientação ao Tempo, Orientado ao Assunto.     
+- Quando o armazém de dados tratar de apenas 1 assunto da organização, é qualificado como um **Datamart**
+- Granularidade : Maior detalhe - Menor Grão ( + volume de dados) / Menor detalhe - Maior Grão( - volume de dados).
 
 ---
 
