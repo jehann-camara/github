@@ -1,8 +1,14 @@
 # Staging Area em Business Intelligence
 
-## O que é Staging Area?
+## O que é Staging Area? ( Área Auxiliar da Carga)
 
-A Staging Area (Área de Staging) é uma camada intermediária no processo de ETL (Extract, Transform, Load) que serve como um espaço temporário onde os dados brutos são armazenados antes de serem processados e carregados no Data Warehouse.
+- A Staging Area (Área de Staging) é uma camada intermediária no processo de ETL (Extract, Transform, Load) que serve como um espaço temporário onde os dados brutos são armazenados antes de serem processados e carregados no Data Warehouse.
+
+- Está entre a camada OLTP e o DW.
+
+- Isola os dados da produção após a carga. (Dados replicados)
+
+- Evita acesso à produção, durante recarga.
 
 ## Principais Características
 
