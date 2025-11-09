@@ -48,6 +48,10 @@ CREATE TABLE stg_vendas (
      data_carga TIMESTAMP
 );
 ```
+OBS: RAW significa literalmente “bruto” ou “não processado”.
+Em Business Intelligence, ele é usado para indicar dados originais, ainda não tratados, transformados ou limpos.
+
+No modelo Lakehouse: Bronze (RAW) → Silver → Gold
 
 ## Boas Práticas
 

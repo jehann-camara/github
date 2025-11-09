@@ -12,7 +12,9 @@ Este documento apresenta, de forma concisa e prática, os conceitos-chave de um 
 ### 1.1
 - Propriedades: Não Volátil, Integração e Padronização, Orientação ao Tempo, Orientado ao Assunto.     
 - Quando o armazém de dados tratar de apenas 1 assunto da organização, é qualificado como um **Datamart**
-- Granularidade : Maior detalhe - Menor Grão ( + volume de dados) / Menor detalhe - Maior Grão( - volume de dados).
+- Granularidade : Maior detalhe - Menor Granularidade ( + volume de dados) / Menor detalhe - Maior Granularidade( - volume de dados).
+- Normalização : É o processo de organizar dados em várias tabelas relacionadas para evitar redundância, garantir consistência e manter integridade referencial.
+  Cada tabela guarda um tipo específico de informação e se conecta a outras por chaves primárias (PK) e estrangeiras (FK).
 
 ---
 
@@ -38,7 +40,7 @@ Este documento apresenta, de forma concisa e prática, os conceitos-chave de um 
     - Floco de Neve (Snowflake): dimensões normalizadas — economia de espaço.
     - Galaxy (constellation): múltiplas fatos compartilhando dimensões.
 
-Exemplo conceitual:
+Exemplo conceitual - Estrela (Star):
 - Fato_Vendas(id_venda, data_id, cliente_id, produto_id, qtde, valor_total)
 - Dim_Cliente(cliente_id, nome, segmento, cidade)
 - Dim_Produto(produto_id, sku, categoria, marca)
@@ -126,7 +128,9 @@ SELECT * FROM dim_cliente WHERE business_key = 'C123' ORDER BY data_inicio;
 ---
 
 ## 9. Boas práticas (comentadas)
-- Definir granularidade clara desde o início (muito fino = mais dados; muito grosso = perde detalhes).
+- Definir granularidade clara desde o início:
+    - (muito fino(- Granularidade) = mais dados. 
+    - muito grosso(+ Granularidade) = perde detalhes).
 - Usar chaves substitutas (surrogate keys) para estabilidade.
 - Conservar metadados e lineage para auditoria e conformidade.
 - Versionar pipelines ETL e testes automatizados.

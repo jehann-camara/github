@@ -15,7 +15,7 @@ A arquitetura de Business Intelligence é um framework que organiza dados, infor
 1. **Extração**: Coleta de dados das fontes
 2. **Transformação**: Limpeza, padronização e enriquecimento
 3. **Carga**: Inserção no Data Warehouse
-> Exemplo: Ferramenta SSIS extraindo dados de vendas, normalizando datas e carregando no DW
+> Exemplo: Ferramenta SSIS extraindo dados de vendas, normalizando datas e carregando no Data Warehouse.
 
 ### 2.3 Data Warehouse (DW)
 - Repositório central de dados integrados
@@ -68,7 +68,7 @@ A arquitetura de Business Intelligence é um framework que organiza dados, infor
 - Visão única da verdade
 - Histórico consistente
 - Análises complexas
-- Escalabilidade
+- Escalabilidade : Um sistema escalável é aquele que cresce sem quebrar — ou seja, mantém bom desempenho mesmo com mais dados, usuários e relatórios.
 
 ## 7. Desafios Comuns
 

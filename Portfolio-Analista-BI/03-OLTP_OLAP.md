@@ -61,6 +61,18 @@ ORDER BY ano, total_vendas DESC;
 | Queries | Simples e rápidas | Complexas |
 | Atualização | Contínua | Periódica |
 
+- Estrutura do banco: 
+ - OLTP: Altamente normalizada (muitas tabelas relacionadas para evitar redundância).
+ - OLAP: Desnormalizada (tabelas fato e dimensão para otimizar consultas).
+
+- Operações comuns
+- OLTP:INSERT, UPDATE, DELETE, consultas simples.
+- OLAP:SELECT complexos, agregações, cálculos e cubos multidimensionais.
+
+- Exemplo de sistemas
+- OLTP: ERP (SAP, TOTVS), CRM (Salesforce).
+- OLAP: Data Warehouse, Power BI, Tableau, Cubos OLAP.
+
 ## Tipos de Armazenamento OLAP
 
 ### ROLAP (Relational OLAP)
